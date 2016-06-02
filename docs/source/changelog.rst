@@ -2,15 +2,30 @@
 Changelog for :mod:`djeneralize`
 ================================
 
+Version 1.4 Release Candidate 1 (2016-05-31)
+============================================
+
+- Added support for Django 1.8.
+
+
+Version 1.3 Final (2015-11-04)
+==============================
+
+- Added support for Django 1.7.
+- Marked Wheel distribution as universal.
+
+
 Version 1.3 Release Candidate 2
 ===============================
 
 - Added support for Django 1.6.
 
+
 Version 1.3 Release Candidate 1
 ===============================
 
 (This release was a mistake)
+
 
 Version 1.2 Release Candidate 1
 ===============================
