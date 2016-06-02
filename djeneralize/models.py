@@ -182,18 +182,14 @@ class BaseGeneralizationModel(Model):
 
     def __init__(self, *args, **kwargs):
         """
-        If specialization_type is not set in kwargs, add this is the most
-        specialized model, set specialization_type to match the specialization
-        declared in Meta
+        If specialization_type is not set in kwargs, and this is the most
+        specialized model or this is a new instance, set specialization_type
+        to match the specialization declared in Meta
 
         """
-
         super(BaseGeneralizationModel, self).__init__(*args, **kwargs)
 
-        # If we have a final specialization, and a specialization_type is not
-        # specified in kwargs, set it to the default for this model:
-        if ('specialization_type' not in kwargs and
-            not self._meta.specializations):
+        if 'specialization_type' not in kwargs and (not self._meta.specializations or self.pk is None):
             self.specialization_type = self.__class__.model_specialization
 
     class Meta:
